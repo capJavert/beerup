@@ -1,8 +1,6 @@
 
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {DataResponse} from "./response";
 import {Observable} from "rxjs/Observable";
-import {Model} from "../models/model";
 import {environment} from "../../../environments/environment";
 
 export abstract class WebService<T> {
@@ -31,19 +29,8 @@ export abstract class WebService<T> {
   abstract get endpoint(): string;
   abstract get primaryKey(): string;
 
-  get(id: string, options?: {
-    headers?: HttpHeaders | {
-      [header: string]: string | string[];
-    };
-    observe?: 'body';
-    params?: HttpParams | {
-      [param: string]: string | string[];
-    };
-    reportProgress?: boolean;
-    responseType?: 'json';
-    withCredentials?: boolean;
-  }): Observable<DataResponse<T>> {
-    return this.http.get<DataResponse<T>>(this.servicePath + "/" + id);
+  get(id): Observable<T> {
+    return this.http.get<T>(this.servicePath + "/" + id);
   }
 
   list(options?: {
@@ -57,53 +44,8 @@ export abstract class WebService<T> {
     reportProgress?: boolean;
     responseType?: 'json';
     withCredentials?: boolean;
-  }): Observable<DataResponse<Array<T>>> {
-    return this.http.get<DataResponse<Array<T>>>(this.servicePath, options);
-  }
-
-  create(model: Model, options?: {
-    headers?: HttpHeaders | {
-      [header: string]: string | string[];
-    };
-    observe?: 'body';
-    params?: HttpParams | {
-      [param: string]: string | string[];
-    };
-    reportProgress?: boolean;
-    responseType?: 'json';
-    withCredentials?: boolean;
-  }): Observable<DataResponse<T>> {
-    return this.http.post<DataResponse<T>>(this.servicePath, model);
-  }
-
-  update(model: any, options?: {
-    headers?: HttpHeaders | {
-      [header: string]: string | string[];
-    };
-    observe?: 'body';
-    params?: HttpParams | {
-      [param: string]: string | string[];
-    };
-    reportProgress?: boolean;
-    responseType?: 'json';
-    withCredentials?: boolean;
-  }): Observable<DataResponse<T>> {
-    return this.http.put<DataResponse<T>>(this.servicePath + "/" + model[this.primaryKey], model, options);
-  }
-
-  remove(model: any, options?: {
-    headers?: HttpHeaders | {
-      [header: string]: string | string[];
-    };
-    observe?: 'body';
-    params?: HttpParams | {
-      [param: string]: string | string[];
-    };
-    reportProgress?: boolean;
-    responseType?: 'json';
-    withCredentials?: boolean;
-  }): Observable<any> {
-    return this.http.delete<DataResponse<any>>(this.servicePath + "/" + model[this.primaryKey], options);
+  }): Observable<Array<T>> {
+    return this.http.get<Array<T>>(this.servicePath, options);
   }
 
   /**

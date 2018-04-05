@@ -22,6 +22,8 @@ import {AppErrorHandler} from "./modules/error/app.error.handler";
 import {ErrorService} from "./modules/error/error.service";
 import {ErrorComponent} from './error/error.component';
 import {ConfigService} from "./modules/config/config.service";
+import { BeerListComponent } from './beer-list/beer-list.component';
+import {BeerService} from "./modules/service/beer.service";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,6 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
     PageNotFoundComponent,
     HeaderComponent,
     ErrorComponent,
+    BeerListComponent,
   ],
   imports: [
     // angular modules
@@ -62,7 +65,8 @@ export function createTranslateLoader(http: HttpClient) {
     {
       provide: ErrorHandler,
       useClass: AppErrorHandler
-    }
+    },
+    BeerService
   ],
   bootstrap: [AppComponent]
 })

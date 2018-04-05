@@ -1,3 +1,6 @@
+/**
+ * Base web service model
+ */
 
 export abstract class Model {
   static primaryKey;
