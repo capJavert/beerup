@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background: #fafafa;
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+button {
+  margin-bottom: 10px !important;
+}
+
+.container-fluid {
+  max-width: 1280px;
+}
+
