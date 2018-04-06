@@ -76,13 +76,15 @@ nav.navigation {
         text-decoration: none;
         box-sizing: border-box;
         border-bottom: 3px solid transparent;
+        transition: .5s;
 
         &.selected {
           border-bottom: 3px solid #FFC80A;
         }
 
         &:hover {
-          .selected
+          .selected;
+          transition: .5s;
         }
 
         &.button {
@@ -98,7 +100,8 @@ nav.navigation {
 
           &:hover {
             color: #000000;
-            .selected
+            .selected;
+            transition: .5s;
           }
         }
       }
