@@ -1,16 +1,51 @@
 
+@import "../../../styles";
+
 footer {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px;
+  color: #ffffff;
+  padding: 24px 0;
   width: 100%;
-  text-align: right;
-  background: #ffffff;
-  position: fixed;
-  bottom: 0;
-  font-weight: 100;
-  font-family: Roboto, Arial, sans-serif;
-  color: #a9a9a9;
+  .bg-pattern;
+}
+
+.app-toolbar {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1130px;
+  display: grid;
+  grid-template: none / 33% auto 33%;
+  padding-bottom: 30px;
+  border-bottom: .5px solid #FFC80A;
+}
+
+.social-container {
+  float: right;
+}
+
+.copyright {
+  color: #9FA3A7;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
+  line-height: 22px;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 60px 0;
+}
+
+nav.navigation ul {
+  margin: 10px 0 0 0;
+}
+
+@media(max-width: 768px) {
+  .app-toolbar {
+    grid-template: none / auto;
+  }
+
+  .logo {
+    margin: 0 auto 15px auto;
+  }
+
+  .social-container {
+    float: none;
+  }
 }

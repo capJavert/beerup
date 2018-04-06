@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background: #fafafa;
+  background: #ffffff;
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
-  padding-bottom: 40px;
+  padding: 0;
 }
 
 .version-info {
@@ -23,11 +23,111 @@ body {
   }
 }
 
-button {
-  margin-bottom: 10px !important;
-}
-
 .container-fluid {
   max-width: 1280px;
 }
 
+.bg-pattern {
+  background: #000000 image-set(
+    url(assets/images/pattern.png) 1x,
+    url(assets/images/pattern@2x.png) 2x,
+  );
+}
+
+/* navigation */
+.logo {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 20px;
+
+  .symbol {
+    margin-right: 5px;
+  }
+}
+
+nav.navigation {
+  display: block;
+  opacity: 1;
+  margin: 0;
+  overflow:hidden;
+  text-align: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 14px;
+      text-align: center;
+      margin: 0 20px;
+
+      a {
+        color: #ffffff;
+        display: block;
+        line-height: 2em;
+        padding: 0 0 5px 0;
+        text-decoration: none;
+        box-sizing: border-box;
+        border-bottom: 3px solid transparent;
+
+        &.selected {
+          border-bottom: 3px solid #FFC80A;
+        }
+
+        &:hover {
+          .selected
+        }
+
+        &.button {
+          width: 123px;
+          padding: 5px 0;
+          border-radius: 34px;
+          border: 3px solid #FFC80A;
+          box-sizing: border-box;
+
+          &.selected {
+            background: #FFC80A;
+          }
+
+          &:hover {
+            color: #000000;
+            .selected
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:480px) {
+  .nav-button {
+    display: block;
+  }
+
+  nav.navigation {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+    ul {
+      width: 100%;
+
+      li {
+        display: block;
+        margin: 15px 0;
+
+        a {
+          box-sizing: border-box;
+          width: 92% !important;
+          margin: 4% !important;
+        }
+      }
+    }
+  }
+}

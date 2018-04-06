@@ -1,10 +1,66 @@
 
-h1.app-name {
-  margin-left: 8px;
+@import "../../../styles";
+
+header {
+  color: #ffffff;
+  padding: 24px 0;
+  width: 100%;
+  display: inline-block;
+  .bg-pattern
 }
 
-.version {
-  font-weight: 100;
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 12px;
+.app-toolbar {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1130px;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: none;
+}
+
+.main-nav {
+  ul {
+    float: right;
+  }
+}
+
+.nav-button {
+  float: right;
+  background: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+  outline: none;
+  color: #FFC80A;
+}
+
+.nav-button-container {
+  display: none;
+}
+
+@media(max-width:480px) {
+  nav.main-nav {
+    .toggle-off;
+    grid-area: navigation;
+
+    &.toggle-on {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  .app-toolbar {
+    grid-template-areas:  '. .' 'navigation navigation';
+  }
+  .nav-button-container {
+    display: block;
+  }
+}
+
+.toggle-off {
+  display: none;
+  opacity: 0;
 }

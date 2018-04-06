@@ -20,7 +20,9 @@
       "styles": [
         "styles.less"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/js/main.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "test": "environments/environment.test.ts",

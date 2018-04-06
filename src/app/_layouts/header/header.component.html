@@ -1,6 +1,26 @@
-<header class="app-toolbar">
-  <h1 class="app-name">
-    {{ 'MAIN.TITLE' | translate }}
-    <span class="version">v{{appVersion | async}}</span>
-  </h1>
+<header>
+  <div class="app-toolbar">
+    <div class="logo">
+      <img class="symbol" srcset="
+        /assets/images/symbol.png 1x,
+        /assets/images/symbol@2x.png 2x" alt="Beerup"
+      />
+      <img srcset="
+      /assets/images/logo.png 1x,
+      /assets/images/logo@2x.png 2x" alt="logo"
+      />
+    </div>
+
+    <div class="nav-button-container">
+      <button onclick="toggleMenu()" class="nav-button"><i class="icon-menu"></i></button>
+    </div>
+
+    <nav class="navigation main-nav">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="selected">Home</a></li>
+        <li><a routerLink="/favorites" routerLinkActive="selected">Favorites</a></li>
+        <li><a class="button" routerLink="/join" routerLinkActive="selected">JOIN</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
