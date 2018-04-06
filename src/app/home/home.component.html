@@ -1,7 +1,24 @@
-<div class="row main-content">
-  <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
-    {{ 'HOME.HELLO' | translate }}
+<div class="main-content">
+  <div class="jumbo-container">
+    <section class="jumbo-showcase">
+      <div class="join-title">
+        <h4>THE BEERSTER PRO 2.0</h4>
+        <h2>
+          Join&nbsp;our<br />
+          famous<br />
+          beerup!
+        </h2>
+        <button class="join-button">Join beerup</button>
+      </div>
 
-    <app-beer-list [data]="beers"></app-beer-list>
+      <img srcset="
+      /assets/images/illustration.png 1x,
+      /assets/images/illustration@2x.png 2x" alt="Beer crate illustration"
+      />
+    </section>
+
+    <button class="join-button border-button">Join beerup</button>
   </div>
+
+  <app-beer-list [data]="beers"></app-beer-list>
 </div>
