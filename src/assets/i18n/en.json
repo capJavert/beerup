@@ -13,6 +13,10 @@
     "SUBTITLE": "THE BEERSTER PRO 2.0",
     "JOIN": "Join beerup"
   },
+  "BEER": {
+    "IBU": "IBU",
+    "ABV": "ABV"
+  },
   "FAVORITES": {
     "FAVORITES": "Favorites"
   },

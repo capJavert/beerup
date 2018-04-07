@@ -1,7 +1,19 @@
 <div>
-  beer-list works!
-
   <ul class="beer-list">
-    <li *ngFor="let beer of data">{{beer.name}}</li>
+    <li *ngFor="let beer of data" class="beer-card">
+      <i class="icon-heart" [ngClass]="{'favourite': beer.favorited }"></i>
+
+      <div class="beer-card-container">
+        <div class="frame">
+          <img src="{{beer.image_url}}" alt="{{beer.name}} image" />
+        </div>
+
+        <aside class="beer-info">
+          <h4>{{beer.name}}</h4>
+          <p class="detail">{{'BEER.IBU' | translate}} <span>{{beer.ibu}}</span></p>
+          <p class="detail">{{'BEER.ABV' | translate}} <span>{{beer.abv}}%</span></p>
+        </aside>
+      </div>
+    </li>
   </ul>
 </div>

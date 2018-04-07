@@ -9,8 +9,22 @@ export class Beer extends Model {
   description: string;
   abv: number;
   ibu: number;
+  image_url: string;
+  food_pairing: string[];
+  brewers_tips: string;
+  contributed_by: string;
+  favorited: boolean;
 
-  constructor(id?: number, name?: string, description?: string, abv?: number, ibu?: number) {
+  constructor(id?: number,
+              name?: string,
+              description?: string,
+              abv?: number,
+              ibu?: number,
+              image_url?: string,
+              food_pairing?: string[],
+              brewers_tips?: string,
+              contributed_by?: string,
+              favorited: boolean = false) {
     super();
 
     Beer.primaryKey = "id";
@@ -20,5 +34,10 @@ export class Beer extends Model {
     this.description = description;
     this.abv = abv;
     this.ibu = ibu;
+    this.image_url = image_url;
+    this.food_pairing = food_pairing;
+    this.brewers_tips = brewers_tips;
+    this.contributed_by = contributed_by;
+    this.favorited = favorited;
   }
 }
