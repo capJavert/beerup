@@ -1,11 +1,23 @@
 {
   "HOME": {
     "HOME": "Home",
-    "HELLO": "hello world"
+    "HELLO": "hello world",
+    "COPYRIGHT": "&copy; 2018 All rights reserved."
   },
   "LANGUAGES": {
     "ENGLISH": "English",
     "CROATIAN": "Croatian"
+  },
+  "BEERUP": {
+    "TITLE": "Join&nbsp;our<br />famous<br />beerup!",
+    "SUBTITLE": "THE BEERSTER PRO 2.0",
+    "JOIN": "Join beerup"
+  },
+  "FAVORITES": {
+    "FAVORITES": "Favorites"
+  },
+  "JOIN": {
+    "JOIN": "Join"
   },
   "MAIN": {
     "TITLE": "Beerup",

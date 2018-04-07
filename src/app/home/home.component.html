@@ -2,13 +2,9 @@
   <div class="jumbo-container">
     <section class="jumbo-showcase">
       <div class="join-title">
-        <h4>THE BEERSTER PRO 2.0</h4>
-        <h2>
-          Join&nbsp;our<br />
-          famous<br />
-          beerup!
-        </h2>
-        <button class="join-button">Join beerup</button>
+        <h4>{{'BEERUP.SUBTITLE' | translate}}</h4>
+        <h2 [innerHTML]="'BEERUP.TITLE' | translate"></h2>
+        <button class="join-button">{{'BEERUP.JOIN' | translate}}</button>
       </div>
 
       <img srcset="
@@ -17,7 +13,7 @@
       />
     </section>
 
-    <button class="join-button border-button">Join beerup</button>
+    <button class="join-button border-button">{{'BEERUP.JOIN' | translate}}</button>
   </div>
 
   <app-beer-list [data]="beers"></app-beer-list>

@@ -13,9 +13,9 @@
 
     <nav class="navigation">
       <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/favorites">Favorites</a></li>
-        <li><a routerLink="/join">JOIN</a></li>
+        <li><a routerLink="/home">{{'HOME.HOME' | translate}}</a></li>
+        <li><a routerLink="/favorites">{{'FAVORITES.FAVORITES' | translate}}</a></li>
+        <li><a routerLink="/join">{{'JOIN.JOIN' | translate}}</a></li>
       </ul>
     </nav>
 
@@ -30,7 +30,5 @@
       </section>
     </nav>
   </div>
-  <section class="copyright">
-    &copy; 2018 All rights reserved.
-  </section>
+  <section class="copyright" [innerHtml]="'HOME.COPYRIGHT' | translate"></section>
 </footer>
