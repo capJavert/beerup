@@ -16,5 +16,5 @@
     <button class="join-button border-button">{{'BEERUP.JOIN' | translate}}</button>
   </div>
 
-  <app-beer-list [data]="beers"></app-beer-list>
+  <app-beer-list [data]="beers" [isLoading]="loader.loading$ | async"></app-beer-list>
 </div>

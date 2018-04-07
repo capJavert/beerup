@@ -13,6 +13,8 @@ import {Beer} from "../modules/models/beer";
 })
 export class BeerListComponent extends BaseComponent {
   @Input() data: Beer[];
+  @Input() isLoading?: boolean;
+  Arr = Array;
 
   constructor(notificationService: NotificationService,
               hotkeysService: HotkeysService,

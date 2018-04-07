@@ -1,5 +1,5 @@
 <div>
-  <ul class="beer-list">
+  <ul class="beer-list" *ngIf="!isLoading">
     <li *ngFor="let beer of data" class="beer-card">
       <i class="icon-heart" [ngClass]="{'favourite': beer.favorited }"></i>
 
@@ -12,6 +12,22 @@
           <h4>{{beer.name}}</h4>
           <p class="detail">{{'BEER.IBU' | translate}} <span>{{beer.ibu}}</span></p>
           <p class="detail">{{'BEER.ABV' | translate}} <span>{{beer.abv}}%</span></p>
+        </aside>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="beer-list beer-list-loader" *ngIf="isLoading">
+    <li *ngFor="let beer of Arr(16).fill(1)" class="beer-card">
+      <i class="icon-heart" [ngClass]="{'favourite': beer.favorited }"></i>
+
+      <div class="beer-card-container">
+        <div class="frame"></div>
+
+        <aside class="beer-info">
+          <h4>BEER TITLE</h4>
+          <p class="detail">IBU</p>
+          <p class="detail">ABV</p>
         </aside>
       </div>
     </li>
