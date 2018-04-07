@@ -85,6 +85,24 @@ button {
   }
 }
 
+app-beer-crate {
+  grid-area: sidebar;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 1130px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    'title sidebar'
+    '. sidebar'
+  ;
+  grid-template-columns: 75% 25%;
+}
+
 @media(max-width: 768px) {
   .jumbo-container {
     .border-button {
@@ -117,6 +135,18 @@ button {
 
       grid-template: none / auto;
     }
+  }
+}
+
+@media(max-width: 768px) {
+  .content-container {
+    grid-template-columns: 65% 35%;
+  }
+}
+
+@media(max-width: 600px) {
+  .content-container {
+    grid-template-columns: 50% 50%;
   }
 }
 

@@ -14,6 +14,8 @@
     "JOIN": "Join beerup"
   },
   "BEER": {
+    "BEER": "Beer",
+    "CREATE": "Crate",
     "IBU": "IBU",
     "ABV": "ABV"
   },
