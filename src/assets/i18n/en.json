@@ -23,7 +23,23 @@
     "FAVORITES": "Favorites"
   },
   "JOIN": {
-    "JOIN": "Join"
+    "TITLE": "Join up",
+    "JOIN": "Join",
+    "SUBTITLE": "Quick, join up before we<br />drink all the beer!",
+    "PERSONAL_INFO": "Personal information",
+    "CONTACT_INFO": "Contact information",
+    "RSVP": {
+      "LABEL": "RSVP",
+      "COMING": "I'm coming",
+      "MAYBE": "Maybe",
+      "CANT": "Can't make it"
+    },
+    "FULL_NAME": "Full name",
+    "EMAIL": "Email",
+    "PHONE": "Phone number",
+    "ADDITIONAL_INFO": "Something you'd like to add",
+    "SUBSCRIBE": "Let me know about future beerups",
+    "REMINDER": "Remind me one day before beerup"
   },
   "MAIN": {
     "TITLE": "Beerup",

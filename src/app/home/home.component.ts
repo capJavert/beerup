@@ -28,13 +28,13 @@ export class HomeComponent extends BaseComponent implements OnInit {
   ngOnInit() {
     this.loader.start();
 
-    this.beerService.list().subscribe(
+    /*this.beerService.list().subscribe(
       (response) => {
       this.beers = response;
       },
       error => this.handleError(error),
       () => this.loader.stop()
-    );
+    );*/
   }
 
 }

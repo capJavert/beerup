@@ -4,6 +4,7 @@ import {HomeComponent} from "../home/home.component";
 import {BaseLayoutComponent} from "../_layouts/base-layout/base-layout.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {ErrorComponent} from "../error/error.component";
+import {JoinComponent} from "../join/join.component";
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
-      { path: 'home', component: HomeComponent}
+      { path: 'home', component: HomeComponent},
+      { path: 'join', component: JoinComponent}
     ]
   },
   {path: 'error', component: ErrorComponent, data: {breadcrumb: "ERRORS.ERROR"}},

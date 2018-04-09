@@ -6,30 +6,6 @@
   margin: 0 auto;
 }
 
-button {
-  border-radius: 22px;
-  width: 172px;
-  background: #FFC80A;
-  color: #292929;
-  padding: 15px 0;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  line-height: 14px;
-  font-family: Montserrat, sans-serif;
-  text-transform: uppercase;
-  border: none;
-  outline: none;
-  transition: .5s;
-  cursor: pointer;
-
-  &:hover {
-    background: #F05638;
-    color: #ffffff;
-    transition: .5s;
-  }
-}
-
 .jumbo-container {
   background: #000000;
   position: relative;
@@ -45,27 +21,6 @@ button {
   }
 
   .jumbo-showcase {
-    width: 100%;
-    max-width: 1130px;
-    margin: 0 auto;
-    padding: 0 20px 20px 20px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template: none / 41% 41%;
-    grid-column-gap: 18%;
-    height: 460px;
-    overflow: hidden;
-
-    h2 {
-      font-size: 90px;
-      font-weight: bold;
-      line-height: 90px;
-      font-family: Montserrat, sans-serif;
-      color: #ffffff;
-      text-transform: uppercase;
-      margin: 20px 0 20px 0;
-    }
-
     h4 {
       margin: 0;
       font-family: Montserrat, sans-serif;
@@ -75,12 +30,6 @@ button {
       letter-spacing: 2px;
       font-weight: bold;
       text-transform: uppercase;
-    }
-
-    img {
-      width: 100%;
-      float: right;
-      align-self: end;
     }
   }
 }
@@ -110,30 +59,13 @@ app-beer-crate {
     }
 
     .jumbo-showcase {
-      height: 760px;
-
-      h2 {
-        font-size: 60px;
-        line-height: 60px;
-        text-align: center;
-        margin: 40px 0 40px 0;
-      }
-
       h4 {
         text-align: center;
-      }
-
-      img {
-        width: 100%;
-        max-width: 450px;
-        margin: 0 auto;
       }
 
       button {
         display: none;
       }
-
-      grid-template: none / auto;
     }
   }
 }
@@ -147,23 +79,5 @@ app-beer-crate {
 @media(max-width: 600px) {
   .content-container {
     grid-template-columns: 50% 50%;
-  }
-}
-
-@media(max-width: 480px) {
-  .jumbo-container {
-    .jumbo-showcase {
-      height: 420px;
-      padding-bottom: 0;
-
-      h2 {
-        font-size: 40px;
-        line-height: 40px;
-      }
-
-      img {
-        max-width: 160px;
-      }
-    }
   }
 }

@@ -25,6 +25,7 @@ import {ConfigService} from "./modules/config/config.service";
 import { BeerListComponent } from './beer-list/beer-list.component';
 import {BeerService} from "./modules/service/beer.service";
 import { BeerCrateComponent } from './beer-crate/beer-crate.component';
+import { JoinComponent } from './join/join.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     ErrorComponent,
     BeerListComponent,
     BeerCrateComponent,
+    JoinComponent,
   ],
   imports: [
     // angular modules
