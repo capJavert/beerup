@@ -28,7 +28,6 @@ export class HomeComponent extends BaseComponent implements OnInit {
   ngOnInit() {
     this.loader.start();
 
-    // TODO temp disabled becaouse of the rate limit on punk api
     this.beerService.list().subscribe(
       (response) => {
       this.beers = response;
