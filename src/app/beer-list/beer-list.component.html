@@ -1,7 +1,7 @@
 <div>
   <ul class="beer-list" *ngIf="!isLoading">
-    <li *ngFor="let beer of data" class="beer-card">
-      <i (click)="toggleFavorite(beer)"
+    <li *ngFor="let beer of data" class="beer-card" (click)="showDetails(beer)">
+      <i (click)="toggleFavorite(beer, $event)"
          class="icon-heart" [ngClass]="{'favourite': favoriteService.isFavorite(beer) }"></i>
 
       <div class="beer-card-container">
@@ -33,4 +33,6 @@
       </div>
     </li>
   </ul>
+
+  <app-beer-detail [beer]="selectedBeer"></app-beer-detail>
 </div>

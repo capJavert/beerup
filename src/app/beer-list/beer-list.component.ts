@@ -16,6 +16,7 @@ export class BeerListComponent extends BaseComponent {
   @Input() data: Beer[];
   @Input() isLoading?: boolean;
   Arr = Array;
+  selectedBeer: Beer;
 
   constructor(notificationService: NotificationService,
               hotkeysService: HotkeysService,
@@ -31,13 +32,19 @@ export class BeerListComponent extends BaseComponent {
    * Works through favorite service
    *
    * @param {Beer} beer
+   * @param event
    */
-  toggleFavorite(beer: Beer) {
-    console.log(beer);
+  toggleFavorite(beer: Beer, event) {
+    event.stopPropagation();
+
     if (!this.favoriteService.isFavorite(beer)) {
       this.favoriteService.favorite(beer);
     } else {
       this.favoriteService.unfavorite(beer);
     }
+  }
+
+  showDetails(beer: Beer) {
+    this.selectedBeer = Object.assign(new Beer(), beer);
   }
 }
