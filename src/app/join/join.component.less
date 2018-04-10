@@ -22,9 +22,11 @@
 .title {
   text-align: center;
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-form {
+.form {
   background: #ffffff;
   padding: 40px 10px;
   box-sizing: border-box;
@@ -38,6 +40,15 @@ form {
     font-family: inherit;
     font-size: 14px;
     line-height: 19px;
+  }
+
+  h3 {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    margin: 0 15px 20px 15px;
+    line-height: 21px;
+    font-size: 18px;
+    text-transform: uppercase;
   }
 
   h4 {
@@ -62,6 +73,22 @@ form {
     left: 50%;
     margin-left: -86px;
   }
+
+  h4.invalid {
+    color: #ff0000;
+  }
+
+  .validation-message {
+    display: none;
+    font-size: 12px;
+    font-family: inherit;
+    color: #ff0000;
+    margin: -12px 20px 0 20px;
+  }
+
+  .invalid + .validation-message {
+    display: block;
+  }
 }
 
 .field {
@@ -74,6 +101,11 @@ form {
   border-radius: 4px;
   background-color: #fcfcfc;
   margin: 20px 15px;
+
+  &.invalid {
+    border: 1px solid #ff0000;
+    box-shadow: none;
+  }
 
   label, input {
     transition: all 0.2s;

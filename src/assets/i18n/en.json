@@ -39,7 +39,15 @@
     "PHONE": "Phone number",
     "ADDITIONAL_INFO": "Something you'd like to add",
     "SUBSCRIBE": "Let me know about future beerups",
-    "REMINDER": "Remind me one day before beerup"
+    "REMINDER": "Remind me one day before beerup",
+    "SUCCESS_TITLE": "Subscription successful",
+    "SUCCESS_MESSAGE": "Check your email for further information and see you at our next Beerup",
+    "VALIDATOR": {
+      "NAME": "Full name can't be empty",
+      "EMAIL": "Email is not valid email",
+      "PHONE": "Phone is not valid phone number",
+      "RSVP": "You have to provide your RSVP answer"
+    }
   },
   "MAIN": {
     "TITLE": "Beerup",

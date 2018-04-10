@@ -25,7 +25,15 @@ export abstract class FormComponent<T> extends BaseComponent implements OnInit {
     this.init();
   }
 
+  /**
+   * Method is called on form component load
+   */
   protected abstract init();
+
+  /**
+   * Method is used to submit form and do any additional work
+   * specific to component
+   */
   protected abstract submit();
 
 }

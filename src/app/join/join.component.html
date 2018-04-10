@@ -15,59 +15,76 @@
   <div class="content-container">
     <h3 [innerHtml]="'JOIN.SUBTITLE' | translate" class="title"></h3>
 
-    <form action="/join">
+    <div *ngIf="joinSuccess" class="form">
+      <h3>{{'JOIN.SUCCESS_TITLE' | translate}}!</h3>
+      <h4>{{'JOIN.SUCCESS_MESSAGE' | translate}}!</h4>
+    </div>
+
+    <div *ngIf="!joinSuccess" [formGroup]="form" class="form">
       <h4>{{'JOIN.PERSONAL_INFO' | translate}}</h4>
-      <div class="field">
-        <input autocomplete="name" id="name" name="name" type="text" placeholder="Elliot Alderson" />
-        <label for="name">{{'JOIN.FULL_NAME' | translate}}</label>
+      <div class="field" [ngClass]="{'invalid': form.controls.name.invalid && form.controls.name.dirty}">
+        <input formControlName="name"
+               required autocomplete="name" id="name" name="name" type="text" placeholder="Elliot Alderson" />
+        <label for="name">{{'JOIN.FULL_NAME' | translate}}*</label>
       </div>
+      <span class="validation-message">{{'JOIN.VALIDATOR.NAME' | translate}}</span>
       <hr />
 
       <h4>{{'JOIN.CONTACT_INFO' | translate}}</h4>
-      <div class="field">
-        <input autocomplete="email" id="email" name="email" type="email" placeholder="elliot@ecorp.org" />
-        <label for="email">{{'JOIN.EMAIL' | translate}}</label>
+      <div class="field" [ngClass]="{'invalid': form.controls.email.invalid && form.controls.email.dirty}">
+        <input formControlName="email"
+               required autocomplete="email" id="email" name="email" type="email" placeholder="elliot@ecorp.org" />
+        <label for="email">{{'JOIN.EMAIL' | translate}}*</label>
       </div>
+      <span class="validation-message">{{'JOIN.VALIDATOR.EMAIL' | translate}}</span>
 
-      <div class="field">
-        <input autocomplete="tel-national" id="phone" name="tel" type="tel" placeholder="+385 099 1234 567" />
-        <label for="phone">{{'JOIN.PHONE' | translate}}</label>
+      <div class="field" [ngClass]="{'invalid': form.controls.phone.invalid && form.controls.phone.dirty}">
+        <input formControlName="phone"
+          required autocomplete="tel-national" id="phone" name="tel" type="tel" placeholder="+385 099 1234 567" />
+        <label for="phone">{{'JOIN.PHONE' | translate}}*</label>
       </div>
+      <span class="validation-message">{{'JOIN.VALIDATOR.PHONE' | translate}}</span>
       <hr />
 
-      <h4>{{'JOIN.RSVP.LABEL' | translate}}</h4>
+      <h4 [ngClass]="{'invalid': form.controls.rsvp.invalid && form.controls.rsvp.dirty}">{{'JOIN.RSVP.LABEL' | translate}}*</h4>
       <section class="field-group">
         <label class="radio-container">{{'JOIN.RSVP.COMING' | translate}}!
-          <input name="rsvp" type="radio" title="{{'JOIN.RSVP.COMING' | translate}}!" value="1" />
+          <input formControlName="rsvp"
+                 required name="rsvp" type="radio" title="{{'JOIN.RSVP.COMING' | translate}}!" value="1" />
           <span class="indicator"></span>
         </label>
 
         <label class="radio-container">{{'JOIN.RSVP.MAYBE' | translate}}?
-          <input name="rsvp" type="radio" value="2" />
+          <input formControlName="rsvp"
+                 required name="rsvp" type="radio" value="2" />
           <span class="indicator"></span>
         </label>
 
         <label class="radio-container">{{'JOIN.RSVP.CANT' | translate}}
-          <input name="rsvp" type="radio" value="3"/>
+          <input formControlName="rsvp"
+                 required name="rsvp" type="radio" value="3"/>
           <span class="indicator"></span>
         </label>
       </section>
 
-      <textarea placeholder="{{'JOIN.ADDITIONAL_INFO' | translate}}?"></textarea>
+      <textarea formControlName="comment" placeholder="{{'JOIN.ADDITIONAL_INFO' | translate}}?"></textarea>
       <hr />
 
       <section class="field-group">
         <label class="checkbox-container">{{'JOIN.SUBSCRIBE' | translate}}!
-          <input title="Subscribe" name="subscribe" type="checkbox" checked="checked" />
+          <input formControlName="subscribe"
+                 title="Subscribe" name="subscribe" type="checkbox" />
           <span class="indicator"></span>
         </label>
         <label  class="checkbox-container">{{'JOIN.REMINDER' | translate}}!
-          <input title="Reminder" name="reminder" type="checkbox" />
+          <input formControlName="reminder"
+                 title="Reminder" name="reminder" type="checkbox" />
           <span class="indicator"></span>
         </label>
       </section>
 
-      <button class="join-button">{{'JOIN.TITLE' | translate}}</button>
-    </form>
+      <button (click)="submit()" type="submit" *ngIf="!isLoading" class="join-button">{{'JOIN.TITLE' | translate}}</button>
+      <button type="button" *ngIf="isLoading" class="join-button">...</button>
+    </div>
   </div>
 </div>
