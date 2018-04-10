@@ -13,7 +13,6 @@ export class Beer extends Model {
   food_pairing: string[];
   brewers_tips: string;
   contributed_by: string;
-  favorited: boolean;
 
   constructor(id?: number,
               name?: string,
@@ -38,6 +37,5 @@ export class Beer extends Model {
     this.food_pairing = food_pairing;
     this.brewers_tips = brewers_tips;
     this.contributed_by = contributed_by;
-    this.favorited = favorited;
   }
 }

@@ -1,7 +1,8 @@
 <div>
   <ul class="beer-list" *ngIf="!isLoading">
     <li *ngFor="let beer of data" class="beer-card">
-      <i class="icon-heart" [ngClass]="{'favourite': beer.favorited }"></i>
+      <i (click)="toggleFavorite(beer)"
+         class="icon-heart" [ngClass]="{'favourite': favoriteService.isFavorite(beer) }"></i>
 
       <div class="beer-card-container">
         <div class="frame">
@@ -19,7 +20,7 @@
 
   <ul class="beer-list beer-list-loader" *ngIf="isLoading">
     <li *ngFor="let beer of Arr(16).fill(1)" class="beer-card">
-      <i class="icon-heart" [ngClass]="{'favourite': beer.favorited }"></i>
+      <i class="icon-heart"></i>
 
       <div class="beer-card-container">
         <div class="frame"></div>

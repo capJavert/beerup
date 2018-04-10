@@ -1,10 +1,10 @@
 
 .beer-list {
-  padding: 0;
+  padding: 0 0 40px 0;
   margin: 20px 0;
   display: grid;
-  grid-template: none / auto auto auto auto;
-  grid-gap: 10px;
+  grid-template: none / 168px 168px 168px 168px;
+  grid-gap: 30px;
 
  .beer-card {
    padding: 26px 20px;
@@ -14,7 +14,7 @@
    height: 168px;
    background: #ffffff;
    border-radius: 4px;
-   margin: 10px 0;
+   margin: 0;
    position: relative;
 
    &:hover {
@@ -45,12 +45,17 @@
    .icon-heart {
      color: #eaeaea;
      position: absolute;
-     top: 10px;
-     left: 10px;
-     font-size: 11px;
+     top: 5px;
+     left: 5px;
+     font-size: 13px;
 
      &.favourite {
        color: #F05638;
+     }
+
+     &:hover {
+       font-size: 15px;
+       .favourite
      }
    }
 
@@ -97,6 +102,13 @@
       &:hover {
         cursor: default;
         box-shadow: none;
+      }
+
+      .icon-heart {
+        &:hover {
+          color: #eaeaea;
+          font-size: 13px;
+        }
       }
     }
 

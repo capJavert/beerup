@@ -28,6 +28,7 @@ import { BeerCrateComponent } from './beer-crate/beer-crate.component';
 import { JoinComponent } from './join/join.component';
 import {JoinServiceMock} from "./join/join.service.mock";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FavoriteService} from "./beer-list/favorite.service";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -75,7 +76,8 @@ export function createTranslateLoader(http: HttpClient) {
       useClass: AppErrorHandler
     },
     BeerService,
-    JoinServiceMock
+    JoinServiceMock,
+    FavoriteService
   ],
   bootstrap: [AppComponent]
 })
