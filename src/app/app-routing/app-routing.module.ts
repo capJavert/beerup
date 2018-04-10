@@ -5,6 +5,7 @@ import {BaseLayoutComponent} from "../_layouts/base-layout/base-layout.component
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {ErrorComponent} from "../error/error.component";
 import {JoinComponent} from "../join/join.component";
+import {FavoritesComponent} from "../favorites/favorites.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
+      { path: 'favorites', component: FavoritesComponent},
       { path: 'join', component: JoinComponent}
     ]
   },

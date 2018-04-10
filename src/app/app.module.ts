@@ -29,6 +29,7 @@ import { JoinComponent } from './join/join.component';
 import {JoinServiceMock} from "./join/join.service.mock";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FavoriteService} from "./beer-list/favorite.service";
+import { FavoritesComponent } from './favorites/favorites.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     BeerListComponent,
     BeerCrateComponent,
     JoinComponent,
+    FavoritesComponent,
   ],
   imports: [
     // angular modules

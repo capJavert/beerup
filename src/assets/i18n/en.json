@@ -20,7 +20,8 @@
     "ABV": "ABV"
   },
   "FAVORITES": {
-    "FAVORITES": "Favorites"
+    "FAVORITES": "Favorites",
+    "TITLE": "My favorite beers"
   },
   "JOIN": {
     "TITLE": "Join up",

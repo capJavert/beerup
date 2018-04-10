@@ -1,0 +1,43 @@
+
+app-beer-crate {
+  grid-area: sidebar;
+}
+
+.jumbo-container {
+  .jumbo-showcase {
+    height: 200px;
+  }
+}
+
+.content-container {
+  width: 100%;
+  max-width: 1130px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    'title sidebar'
+    '. sidebar'
+;
+  grid-template-columns: 75% 25%;
+}
+
+.icon-heart {
+  color: #F05638;
+}
+
+a {
+  color: #FFC80A;
+  outline: none;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: #FFC80A;
+  }
+}
+
+h4 {
+  margin-bottom: 40px;
+}
