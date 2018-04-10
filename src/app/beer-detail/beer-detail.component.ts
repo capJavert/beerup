@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Beer} from "../modules/models/beer";
-import {FavoriteService} from "../beer-list/favorite.service";
+import {FavoriteService} from "../favorites/favorite.service";
 import {Hotkey, HotkeysService} from "angular2-hotkeys";
 
 @Component({

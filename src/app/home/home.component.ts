@@ -29,13 +29,13 @@ export class HomeComponent extends BaseComponent implements OnInit {
     this.loader.start();
 
     // TODO temp disabled becaouse of the rate limit on punk api
-    /*this.beerService.list().subscribe(
+    this.beerService.list().subscribe(
       (response) => {
       this.beers = response;
       },
       error => this.handleError(error),
       () => this.loader.stop()
-    );*/
+    );
   }
 
 }

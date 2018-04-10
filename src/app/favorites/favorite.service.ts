@@ -28,14 +28,12 @@ export class FavoriteService {
    */
   set favorites(value: Beer[]) {
     if (this.isStorageAvailable) {
-      console.log(value);
       localStorage.setItem(storageKey, JSON.stringify(value));
     }
   }
 
   constructor() {
     if (this.isStorageAvailable) {
-      console.log(this.favorites);
       if (ConditionsUtil.isNull(this.favorites)) {
         // if no favorites stored init storage
         localStorage.setItem(

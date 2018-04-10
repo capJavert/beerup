@@ -28,7 +28,7 @@ import { BeerCrateComponent } from './beer-crate/beer-crate.component';
 import { JoinComponent } from './join/join.component';
 import {JoinServiceMock} from "./join/join.service.mock";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FavoriteService} from "./beer-list/favorite.service";
+import {FavoriteService} from "./favorites/favorite.service";
 import { FavoritesComponent } from './favorites/favorites.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 

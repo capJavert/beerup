@@ -5,7 +5,7 @@ import {HotkeysService} from "angular2-hotkeys";
 import {LoaderService} from "../modules/loader/loader.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Beer} from "../modules/models/beer";
-import {FavoriteService} from "./favorite.service";
+import {FavoriteService} from "../favorites/favorite.service";
 
 @Component({
   selector: 'app-beer-list',

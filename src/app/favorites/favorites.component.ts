@@ -4,7 +4,7 @@ import {NotificationService} from "../modules/notification/notification.service"
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoaderService} from "../modules/loader/loader.service";
 import {HotkeysService} from "angular2-hotkeys";
-import {FavoriteService} from "../beer-list/favorite.service";
+import {FavoriteService} from "./favorite.service";
 
 @Component({
   selector: 'app-favorites',
