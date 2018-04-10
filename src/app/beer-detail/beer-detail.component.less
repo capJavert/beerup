@@ -74,13 +74,6 @@
     width: 115px;
     white-space: nowrap;
     text-align: center;
-
-    &:before {
-      content: "";
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-    }
   }
 
   img {
@@ -140,8 +133,16 @@
 }
 
 @media (max-width:768px) {
+  .beer-card {
+    width: 100%;
+
+    .beer-card-container {
+      grid-column-gap: 40px;
+    }
+  }
+
   .modal-content {
-    width: 500px
+    width: 90%
   }
   .modal {
     padding-top: 50px
@@ -157,5 +158,46 @@
   }
   .sidebar.collapse {
     display: block!important
+  }
+}
+
+@media (max-width:480px) {
+  .beer-card {
+    padding: 0 20px;
+
+    .beer-card-container {
+      grid-template-columns: auto;
+      grid-column-gap: 0;
+    }
+
+    h4, h5, p {
+      text-align: center;
+    }
+
+    .beer-info {
+      .consumption-info {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+
+      p.detail {
+        margin: 5px auto;
+        max-width: none;
+        text-align: center;
+
+        span {
+          float: none;
+        }
+      }
+    }
+
+    .frame {
+      width: 100%;
+    }
+
+    img {
+      margin: 0 auto;
+    }
   }
 }
