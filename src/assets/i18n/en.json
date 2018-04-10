@@ -17,7 +17,11 @@
     "BEER": "Beer",
     "CREATE": "Crate",
     "IBU": "IBU",
-    "ABV": "ABV"
+    "ABV": "ABV",
+    "DESCRIPTION": "Description",
+    "FOOD": "Food pairing",
+    "TIPS": "Tips and tricks",
+    "AUTHOR": "Contributed by"
   },
   "FAVORITES": {
     "FAVORITES": "Favorites",

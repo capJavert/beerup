@@ -1,0 +1,36 @@
+<div *ngIf="!!beer" id="beer-detail" class="modal" (click)="close()">
+  <div class="modal-content">
+    <div class="container">
+      <i (click)="toggleFavorite($event)" class="icon-heart"
+         [ngClass]="{'favourite': favoriteService.isFavorite(beer) }"></i>
+      <i (click)="close()"
+            class="icon-cancel"></i>
+
+      <section class="beer-card">
+        <div class="beer-card-container">
+          <div class="frame">
+            <img src="{{beer.image_url}}" alt="{{beer.name}} image" />
+          </div>
+
+          <aside class="beer-info">
+            <h4>{{beer.name}}</h4>
+            <p class="detail">{{'BEER.IBU' | translate}} <span>{{beer.ibu}}</span></p>
+            <p class="detail">{{'BEER.ABV' | translate}} <span>{{beer.abv}}%</span></p>
+
+            <div class="clearfix" style="margin-bottom: 20px;"></div>
+
+            <h5><i class="icon-quote-left"></i>&nbsp;{{'BEER.DESCRIPTION' | translate}}</h5>
+            <p>{{beer.description}}</p>
+
+            <h5><i class="icon-chat"></i>&nbsp;{{'BEER.TIPS' | translate}}</h5>
+            <p>{{beer.brewers_tips}}</p>
+
+            <h5><i class="icon-food"></i>&nbsp;{{'BEER.FOOD' | translate}}</h5>
+            <p>{{beer.food_pairing}}</p>
+            <p>{{'BEER.AUTHOR' | translate}}: <strong>{{beer.contributed_by}}</strong></p>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
