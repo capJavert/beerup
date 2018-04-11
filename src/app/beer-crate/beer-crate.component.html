@@ -1,5 +1,20 @@
 
 <h3 class="title">{{'BEER.CREATE' | translate}}</h3>
-<p>
-  beer-crate works!
+
+<section class="beer-crate" (drop)="drop($event)" (dragover)="allowDrop($event)">
+  <div *ngFor="let item of crate1; let beerIndex = index" class="beer-item">
+    <img draggable="true" (drag)="drag(beerIndex)" src="{{item}}" alt="Beer" />
+  </div>
+</section>
+
+<section class="beer-trash" (drop)="dropTrash($event)" (dragover)="allowDrop($event)">
+  Drop empty bottles here please!
+</section>
+
+<p class="quote-text">
+  Drag beers to the crate to have them appear in the crate.
+</p>
+
+<p class="quote-author">
+  <i class="icon-quote-left"></i> capJavert
 </p>

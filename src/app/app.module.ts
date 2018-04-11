@@ -31,6 +31,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FavoriteService} from "./favorites/favorite.service";
 import { FavoritesComponent } from './favorites/favorites.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
+import {CrateService} from "./beer-crate/crate.service";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -81,7 +82,8 @@ export function createTranslateLoader(http: HttpClient) {
     },
     BeerService,
     JoinServiceMock,
-    FavoriteService
+    FavoriteService,
+    CrateService
   ],
   bootstrap: [AppComponent]
 })
