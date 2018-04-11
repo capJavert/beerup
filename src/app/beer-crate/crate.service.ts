@@ -1,11 +1,12 @@
 
 import {Injectable} from "@angular/core";
 import {ConditionsUtil} from "../modules/utils/ConditionsUtil";
+import {StorageService} from "../modules/service/storage.service";
 
 const storageKey = "beerup-crate";
 
 @Injectable()
-export class CrateService {
+export class CrateService extends StorageService {
   /**
    * Load current crate into memory from local storage
    *
@@ -30,6 +31,8 @@ export class CrateService {
   }
 
   constructor() {
+    super();
+
     if (this.isStorageAvailable) {
       if (ConditionsUtil.isNull(this.crate)) {
         // if no favorites stored init storage
@@ -39,13 +42,5 @@ export class CrateService {
         );
       }
     }
-  }
-
-  /**
-   * Check if storage is available/supported inside browser
-   * @returns {boolean}
-   */
-  get isStorageAvailable(): boolean {
-    return typeof(Storage) !== "undefined";
   }
 }

@@ -2,11 +2,12 @@
 import {Injectable} from "@angular/core";
 import {ConditionsUtil} from "../modules/utils/ConditionsUtil";
 import {Beer} from "../modules/models/beer";
+import {StorageService} from "../modules/service/storage.service";
 
 const storageKey = "beerup-user";
 
 @Injectable()
-export class FavoriteService {
+export class FavoriteService extends StorageService {
   private _favorites: Beer[] = [];
 
   /**
@@ -33,6 +34,8 @@ export class FavoriteService {
   }
 
   constructor() {
+    super();
+
     if (this.isStorageAvailable) {
       if (ConditionsUtil.isNull(this.favorites)) {
         // if no favorites stored init storage
@@ -60,14 +63,6 @@ export class FavoriteService {
       this._favorites.splice(index, 1);
       this.favorites = this._favorites;
     }
-  }
-
-  /**
-   * Check if storage is available/supported inside browser
-   * @returns {boolean}
-   */
-  get isStorageAvailable(): boolean {
-    return typeof(Storage) !== "undefined";
   }
 
   isFavorite(beer: Beer) {
