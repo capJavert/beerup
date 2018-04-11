@@ -1,5 +1,5 @@
 
-<h3 class="title">{{'BEER.CREATE' | translate}}</h3>
+<h3 class="title">{{'CRATE.CRATE' | translate}}</h3>
 
 <section class="beer-crate" (drop)="drop($event)" (dragover)="allowDrop($event)">
   <div *ngFor="let item of crate1; let beerIndex = index" class="beer-item">
@@ -8,11 +8,11 @@
 </section>
 
 <section class="beer-trash" (drop)="dropTrash($event)" (dragover)="allowDrop($event)">
-  Drop empty bottles here please!
+  {{'CRATE.TUTORIAL_REMOVE' | translate}}.
 </section>
 
 <p class="quote-text">
-  Drag beers to the crate to have them appear in the crate.
+  {{'CRATE.TUTORIAL_ADD' | translate}}!
 </p>
 
 <p class="quote-author">

@@ -15,7 +15,7 @@
   },
   "BEER": {
     "BEER": "Beer",
-    "CREATE": "Crate",
+    "CRATE": "Crate",
     "IBU": "IBU",
     "ABV": "ABV",
     "DESCRIPTION": "Description",
@@ -53,6 +53,11 @@
       "PHONE": "Phone is not valid phone number",
       "RSVP": "You have to provide your RSVP answer"
     }
+  },
+  "CRATE": {
+    "CRATE": "Crate",
+    "TUTORIAL_ADD": "Drag beers to the crate to have them appear in the crate",
+    "TUTORIAL_REMOVE": "Drop empty bottles here please"
   },
   "MAIN": {
     "TITLE": "Beerup",
