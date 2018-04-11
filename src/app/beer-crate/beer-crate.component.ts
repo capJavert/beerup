@@ -26,9 +26,8 @@ export class BeerCrateComponent {
 
     if (this.crate1.length < 20) {
       this.crate1.push(beerImageSrc);
+      this.crateService.crate = this.crate1;
     }
-
-    this.crateService.crate = this.crate1;
   }
 
   dropTrash(event) {
