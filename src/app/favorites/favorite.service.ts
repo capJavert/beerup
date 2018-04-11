@@ -1,5 +1,5 @@
 
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {ConditionsUtil} from "../modules/utils/ConditionsUtil";
 import {Beer} from "../modules/models/beer";
 import {StorageService} from "../modules/service/storage.service";
@@ -9,6 +9,7 @@ const storageKey = "beerup-user";
 @Injectable()
 export class FavoriteService extends StorageService {
   private _favorites: Beer[] = [];
+  onChange = new EventEmitter<boolean>();
 
   /**
    * Load current favorites into memory from local storage
@@ -30,6 +31,7 @@ export class FavoriteService extends StorageService {
   set favorites(value: Beer[]) {
     if (this.isStorageAvailable) {
       localStorage.setItem(storageKey, JSON.stringify(value));
+      this.onChange.next(true);
     }
   }
 

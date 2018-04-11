@@ -15,9 +15,9 @@
   <div class="content-container">
     <h3 class="title">{{'FAVORITES.TITLE' | translate}}</h3>
 
-    <app-beer-list *ngIf="favoriteService.favorites.length > 0" [data]="favoriteService.favorites" [isLoading]="false"></app-beer-list>
+    <app-beer-list *ngIf="beers.length > 0" [data]="beers" [isLoading]="false"></app-beer-list>
 
-    <h4 *ngIf="favoriteService.favorites.length === 0">
+    <h4 *ngIf="beers.length === 0">
       Click on the <i class="icon-heart"></i> icon inside any beer card on the <a routerLink="/home">home page</a> to add beers to your favorites.
     </h4>
 

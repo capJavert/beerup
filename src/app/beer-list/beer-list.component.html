@@ -6,7 +6,7 @@
 
       <div class="beer-card-container">
         <div class="frame">
-          <img draggable="true" src="{{beer.image_url}}" alt="{{beer.name}} image" />
+          <img (dragstart)="drag($event)" draggable="true" src="{{beer.image_url}}" alt="{{beer.name}} image" />
         </div>
 
         <aside class="beer-info">

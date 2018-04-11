@@ -12,7 +12,7 @@ export class CrateService extends StorageService {
    *
    * @returns {number[]}
    */
-  get crate(): string[] {
+  get crates(): string[][] {
     if (this.isStorageAvailable) {
       return JSON.parse(localStorage.getItem(storageKey));
     } else {
@@ -24,7 +24,7 @@ export class CrateService extends StorageService {
    * Set current crate to local storage
    * @param {number[]} value
    */
-  set crate(value: string[]) {
+  set crates(value: string[][]) {
     if (this.isStorageAvailable) {
       localStorage.setItem(storageKey, JSON.stringify(value));
     }
@@ -34,11 +34,11 @@ export class CrateService extends StorageService {
     super();
 
     if (this.isStorageAvailable) {
-      if (ConditionsUtil.isNull(this.crate)) {
+      if (ConditionsUtil.isNull(this.crates)) {
         // if no favorites stored init storage
         localStorage.setItem(
           storageKey,
-          JSON.stringify([])
+          JSON.stringify([[], [], []])
         );
       }
     }

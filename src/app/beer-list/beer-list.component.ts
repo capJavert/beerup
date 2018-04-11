@@ -47,4 +47,8 @@ export class BeerListComponent extends BaseComponent {
   showDetails(beer: Beer) {
     this.selectedBeer = Object.assign(new Beer(), beer);
   }
+
+  drag(event) {
+    event.dataTransfer.setData("text", event.target.src);
+  }
 }

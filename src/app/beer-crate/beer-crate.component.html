@@ -2,7 +2,7 @@
 <h3 class="title">{{'CRATE.CRATE' | translate}}</h3>
 
 <section class="beer-crate" (drop)="drop($event)" (dragover)="allowDrop($event)">
-  <div *ngFor="let item of crate1; let beerIndex = index" class="beer-item">
+  <div *ngFor="let item of activeCrate; let beerIndex = index" class="beer-item">
     <img draggable="true" (drag)="drag(beerIndex)" src="{{item}}" alt="Beer" />
   </div>
 </section>
