@@ -14,6 +14,7 @@ import {BeerService} from "../modules/service/beer.service";
 })
 export class HomeComponent extends BaseComponent implements OnInit {
   public beers: Beer[];
+  private currentPage: number;
 
   constructor(notificationService: NotificationService,
               _hotkeysService: HotkeysService,
@@ -23,18 +24,36 @@ export class HomeComponent extends BaseComponent implements OnInit {
               public beerService: BeerService) {
 
     super(notificationService, _hotkeysService, loader, router, activatedRoute);
+
+    this.beers = [];
+    this.currentPage = 1;
   }
 
   ngOnInit() {
     this.loader.start();
 
-    this.beerService.list().subscribe(
+    this.listBeers();
+  }
+
+  loadMore() {
+    this.currentPage++;
+    this.loader.start();
+
+    this.listBeers();
+  }
+
+  private listBeers() {
+    this.beerService.list({
+      params: {
+        per_page: "16",
+        page: this.currentPage.toString()
+      }
+    }).subscribe(
       (response) => {
-      this.beers = response;
+        this.beers = [...this.beers, ...response];
       },
       error => this.handleError(error),
       () => this.loader.stop()
     );
   }
-
 }

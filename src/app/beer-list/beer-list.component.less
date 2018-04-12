@@ -1,6 +1,6 @@
 
 .beer-list {
-  padding: 0 0 40px 0;
+  padding: 0;
   margin: 20px 0;
   display: grid;
   grid-template: none / 168px 168px 168px 168px;
@@ -127,6 +127,31 @@
     p.detail {
       color: #eaeaea !important;
       background: #eaeaea;
+    }
+  }
+}
+
+.loader-container {
+  text-align: center;
+
+  .load-more {
+    display: inline-block;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-sizing: border-box;
+    padding: 10px 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.08);
+    transition: .5s;
+
+    &:hover {
+      background: #efefef;
     }
   }
 }

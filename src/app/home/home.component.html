@@ -24,7 +24,7 @@
   <div class="content-container">
     <h3 class="title">{{'BEER.BEER' | translate}}</h3>
 
-    <app-beer-list [data]="beers" [isLoading]="loader.loading$ | async"></app-beer-list>
+    <app-beer-list (loadMore)="loadMore()" [data]="beers" [isLoading]="loader.loading$ | async"></app-beer-list>
     <app-beer-crate></app-beer-crate>
   </div>
 </div>

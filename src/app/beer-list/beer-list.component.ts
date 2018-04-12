@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BaseComponent} from "../modules/components/base.component";
 import {NotificationService} from "../modules/notification/notification.service";
 import {HotkeysService} from "angular2-hotkeys";
@@ -13,6 +13,7 @@ import {FavoriteService} from "../favorites/favorite.service";
   styleUrls: ['./beer-list.component.less']
 })
 export class BeerListComponent extends BaseComponent {
+  @Output() loadMore = new EventEmitter<boolean>();
   @Input() data: Beer[];
   @Input() isLoading?: boolean;
   Arr = Array;
@@ -25,6 +26,8 @@ export class BeerListComponent extends BaseComponent {
               activatedRoute: ActivatedRoute,
               public favoriteService: FavoriteService) {
     super(notificationService, hotkeysService, loader, router, activatedRoute);
+
+    this.data = [];
   }
 
   /**
