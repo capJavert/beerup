@@ -16,6 +16,7 @@ export class BeerListComponent extends BaseComponent {
   @Output() loadMore = new EventEmitter<boolean>();
   @Input() data: Beer[];
   @Input() isLoading?: boolean;
+  @Input() showLoadMore: boolean;
   Arr = Array;
   selectedBeer: Beer;
 
@@ -28,6 +29,7 @@ export class BeerListComponent extends BaseComponent {
     super(notificationService, hotkeysService, loader, router, activatedRoute);
 
     this.data = [];
+    this.showLoadMore = true;
   }
 
   /**

@@ -34,7 +34,7 @@
     </li>
   </ul>
 
-  <div *ngIf="!isLoading && data.length > 0" class="loader-container">
+  <div *ngIf="showLoadMore && !isLoading && data.length > 0" class="loader-container">
     <div (click)="loadMore.emit(true)" class="load-more">Load more beers</div>
   </div>
 
