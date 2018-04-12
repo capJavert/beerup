@@ -57,7 +57,11 @@
   "CRATE": {
     "CRATE": "Crate",
     "TUTORIAL_ADD": "Drag beers to the crate to have them appear in the crate",
-    "TUTORIAL_REMOVE": "Drop empty bottles here please"
+    "TUTORIAL_REMOVE": "Drop empty bottles here please",
+    "ONE": "One",
+    "TWO": "Two",
+    "THREE": "Three",
+    "ADD": "Add to Crate"
   },
   "MAIN": {
     "TITLE": "Beerup",
