@@ -21,6 +21,8 @@
       <ul>
         <li><a routerLink="/home" routerLinkActive="selected">{{'HOME.HOME' | translate}}</a></li>
         <li><a routerLink="/favorites" routerLinkActive="selected">{{'FAVORITES.FAVORITES' | translate}}</a></li>
+        <li *ngIf="!isAuth" (click)="login()"><a class="login"><i class="icon-google"></i>&nbsp;Sign in</a></li>
+        <li *ngIf="isAuth"><a class="sync"><i class="icon-google"></i>&nbsp;Firebase sync ON</a></li>
         <li><a class="button" routerLink="/join" routerLinkActive="selected">{{'JOIN.JOIN' | translate}}</a></li>
       </ul>
     </nav>

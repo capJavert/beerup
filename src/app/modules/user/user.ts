@@ -1,4 +1,5 @@
 import {Session} from "./session";
+import * as firebase from "firebase";
 
 export class User {
   private _session: Session;
@@ -20,6 +21,6 @@ export class User {
   }
 
   get isAuth(): boolean {
-    return this._session != null;
+    return !!firebase.auth().currentUser;
   }
 }
