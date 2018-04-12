@@ -18,7 +18,7 @@ function toggleMenu() {
 }
 
 window.onscroll = () => {
-  if (window.width > 480) {
+  if (window.innerWidth > 480) {
     toggleFixedBeerCrate()
   } else {
     toggleFixedBeerCrateMobile()
@@ -53,7 +53,7 @@ function toggleFixedBeerCrateMobile() {
   let beerCrateSidebar = document.getElementById("beer-crate-sidebar");
   let beerList = document.getElementById("beer-list-container");
 
-  if (beerCrateSidebar === null) {
+  if (beerList === null) {
     return
   }
 
