@@ -1,4 +1,21 @@
 
+#beer-crate-sidebar {
+  transition: .5s;
+
+  &.fixed {
+    background: #f7f7f7;
+    position: fixed;
+    top: -30px;
+    border-radius: 10px;
+
+    .beer-crate,
+    .crate-tab-bar {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+  }
+}
+
 .beer-crate {
   margin: 20px auto 0 auto;
   display: grid;

@@ -16,3 +16,26 @@ function toggleMenu() {
     navigation.className = "navigation main-nav toggle-on";
   }
 }
+
+window.onscroll = () => {
+  toggleFixedBeerCrate()
+};
+
+let fixedOffset = null;
+
+/**
+ * Listener for fixed beer crate sidebar when scrolling
+ */
+function toggleFixedBeerCrate() {
+  let beerCrateSidebar = document.getElementById("beer-crate-sidebar");
+
+  if (beerCrateSidebar.className !== 'fixed') {
+    fixedOffset = beerCrateSidebar.offsetTop;
+  }
+
+  if (window.pageYOffset >= fixedOffset) {
+    beerCrateSidebar.classList.add("fixed");
+  } else {
+    beerCrateSidebar.classList.remove("fixed");
+  }
+}

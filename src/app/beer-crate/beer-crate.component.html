@@ -1,28 +1,30 @@
 
-<h3 class="title">{{'CRATE.CRATE' | translate}}</h3>
+<div id="beer-crate-sidebar">
+  <h3 class="title">{{'CRATE.CRATE' | translate}}</h3>
 
-<ul class="crate-tab-bar">
-  <li [ngClass]="{'selected': activeCrateIndex === 0}" (click)="activeCrateIndex=0">{{'CRATE.ONE' | translate}}</li>
-  <li [ngClass]="{'selected': activeCrateIndex === 1}" (click)="activeCrateIndex=1">{{'CRATE.TWO' | translate}}</li>
-  <li [ngClass]="{'selected': activeCrateIndex === 2}" (click)="activeCrateIndex=2">{{'CRATE.THREE' | translate}}</li>
-</ul>
+  <ul class="crate-tab-bar">
+    <li [ngClass]="{'selected': activeCrateIndex === 0}" (click)="activeCrateIndex=0">{{'CRATE.ONE' | translate}}</li>
+    <li [ngClass]="{'selected': activeCrateIndex === 1}" (click)="activeCrateIndex=1">{{'CRATE.TWO' | translate}}</li>
+    <li [ngClass]="{'selected': activeCrateIndex === 2}" (click)="activeCrateIndex=2">{{'CRATE.THREE' | translate}}</li>
+  </ul>
 
-<div class="clearfix" style="margin-botto: 20px;"></div>
+  <div class="clearfix" style="margin-botto: 20px;"></div>
 
-<section class="beer-crate" (drop)="drop($event)" (dragover)="allowDrop($event)">
-  <div *ngFor="let item of activeCrate; let beerIndex = index" class="beer-item">
-    <img draggable="true" (drag)="drag(beerIndex)" src="{{item}}" alt="Beer" />
-  </div>
-</section>
+  <section id="beer-crate" class="beer-crate" (drop)="drop($event)" (dragover)="allowDrop($event)">
+    <div *ngFor="let item of activeCrate; let beerIndex = index" class="beer-item">
+      <img draggable="true" (drag)="drag(beerIndex)" src="{{item}}" alt="Beer" />
+    </div>
+  </section>
 
-<section class="beer-trash" (drop)="dropTrash($event)" (dragover)="allowDrop($event)">
-  {{'CRATE.TUTORIAL_REMOVE' | translate}}.
-</section>
+  <section class="beer-trash" (drop)="dropTrash($event)" (dragover)="allowDrop($event)">
+    {{'CRATE.TUTORIAL_REMOVE' | translate}}.
+  </section>
 
-<p class="quote-text">
-  {{'CRATE.TUTORIAL_ADD' | translate}}!
-</p>
+  <p class="quote-text">
+    {{'CRATE.TUTORIAL_ADD' | translate}}!
+  </p>
 
-<p class="quote-author">
-  <i class="icon-quote-left"></i> capJavert
-</p>
+  <p class="quote-author">
+    <i class="icon-quote-left"></i> capJavert
+  </p>
+</div>
