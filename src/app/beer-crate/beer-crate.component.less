@@ -1,8 +1,10 @@
 
 #beer-crate-sidebar {
   transition: .5s;
+  position: relative;
 
   &.fixed {
+    z-index: 10001;
     background: #f7f7f7;
     position: fixed;
     top: -30px;
@@ -14,6 +16,19 @@
       margin-right: 3px;
     }
   }
+}
+
+.expand-crate-button {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #FFC80A;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 10002;
 }
 
 .beer-crate {
@@ -106,6 +121,34 @@ ul.crate-tab-bar {
 
     &.selected {
       border-bottom: 3px solid #F05638;
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  .expand-crate-button {
+    display: block;
+  }
+
+  #beer-crate-sidebar {
+    &.fixed {
+      position: fixed;
+      top: auto;
+      bottom: -350px;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      &.expanded-crate {
+        bottom: -100px;
+      }
+    }
+
+    .crate-tab-bar {
+      padding-left: 10px;
+    }
+
+    .title {
+      display: none;
     }
   }
 }

@@ -85,6 +85,18 @@ app-beer-crate {
 
 @media(max-width: 600px) {
   .content-container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto;
+    grid-template-areas:
+      'title'
+      '.'
+      'sidebar'
+  ;
+    grid-template-rows: none !important;
+
+    .sort-container {
+      .tab-bar {
+        margin-right: 0;
+      }
+    }
   }
 }

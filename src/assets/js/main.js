@@ -18,10 +18,15 @@ function toggleMenu() {
 }
 
 window.onscroll = () => {
-  toggleFixedBeerCrate()
+  if (window.width > 480) {
+    toggleFixedBeerCrate()
+  } else {
+    toggleFixedBeerCrateMobile()
+  }
 };
 
 let fixedOffset = null;
+let fixedMobileOffset = null;
 
 /**
  * Listener for fixed beer crate sidebar when scrolling
@@ -29,11 +34,34 @@ let fixedOffset = null;
 function toggleFixedBeerCrate() {
   let beerCrateSidebar = document.getElementById("beer-crate-sidebar");
 
+  if (beerCrateSidebar === null) {
+    return
+  }
+
   if (beerCrateSidebar.className !== 'fixed') {
     fixedOffset = beerCrateSidebar.offsetTop;
   }
 
-  if (window.pageYOffset >= fixedOffset + 100) { // added 50px offset so the page does not jump
+  if (window.pageYOffset >= fixedOffset + 100) { // added 100px offset so the page does not jump
+    beerCrateSidebar.classList.add("fixed");
+  } else {
+    beerCrateSidebar.classList.remove("fixed");
+  }
+}
+
+function toggleFixedBeerCrateMobile() {
+  let beerCrateSidebar = document.getElementById("beer-crate-sidebar");
+  let beerList = document.getElementById("beer-list-container");
+
+  if (beerCrateSidebar === null) {
+    return
+  }
+
+  if (beerCrateSidebar.className !== 'fixed') {
+    fixedMobileOffset = beerList.offsetTop;
+  }
+
+  if (window.pageYOffset >= fixedMobileOffset) {
     beerCrateSidebar.classList.add("fixed");
   } else {
     beerCrateSidebar.classList.remove("fixed");

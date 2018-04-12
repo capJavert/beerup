@@ -13,11 +13,13 @@ export class BeerCrateComponent implements OnDestroy {
   private _activeCrateIndex: number;
   selectedBeerIndex: number;
   private onCratesChanged;
+  isCrateExpanded: boolean; // sets if crate is expanded on mobile viewport
 
   constructor(public crateService: CrateService) {
     this.selectedBeerIndex = null;
     this.crates = this.crateService.crates;
     this.activeCrateIndex = 0;
+    this.isCrateExpanded = false;
 
     this.onCratesChanged = this.crateService.onChange.subscribe(
       () => this.crates = this.crateService.crates

@@ -1,4 +1,4 @@
-<div class="content-container">
+<div class="content-container" id="beer-list-container">
   <ul class="beer-list" *ngIf="!isLoading || data.length > 0">
     <li *ngFor="let beer of data" class="beer-card" (click)="showDetails(beer)">
       <i (click)="toggleFavorite(beer, $event)"
@@ -34,8 +34,8 @@
     </li>
   </ul>
 
-  <div *ngIf="showLoadMore && !isLoading && data.length > 0" class="loader-container">
-    <div (click)="loadMore.emit(true)" class="load-more">Load more beers</div>
+  <div *ngIf="!isLoading && data.length > 0" class="loader-container">
+    <div *ngIf="showLoadMore" (click)="loadMore.emit(true)" class="load-more">Load more beers</div>
   </div>
 
   <app-beer-detail [beer]="selectedBeer"></app-beer-detail>
