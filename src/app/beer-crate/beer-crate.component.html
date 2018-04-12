@@ -1,6 +1,14 @@
 
 <h3 class="title">{{'CRATE.CRATE' | translate}}</h3>
 
+<ul class="crate-tab-bar">
+  <li [ngClass]="{'selected': activeCrateIndex === 0}" (click)="activeCrateIndex=0">One</li>
+  <li [ngClass]="{'selected': activeCrateIndex === 1}" (click)="activeCrateIndex=1">Two</li>
+  <li [ngClass]="{'selected': activeCrateIndex === 2}" (click)="activeCrateIndex=2">Three</li>
+</ul>
+
+<div class="clearfix" style="margin-botto: 20px;"></div>
+
 <section class="beer-crate" (drop)="drop($event)" (dragover)="allowDrop($event)">
   <div *ngFor="let item of activeCrate; let beerIndex = index" class="beer-item">
     <img draggable="true" (drag)="drag(beerIndex)" src="{{item}}" alt="Beer" />

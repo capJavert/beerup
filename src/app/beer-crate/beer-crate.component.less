@@ -1,6 +1,6 @@
 
 .beer-crate {
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   display: grid;
   padding: 15px 15px;
   box-sizing: border-box;
@@ -44,6 +44,7 @@
 }
 
 .quote-text {
+  max-width: 264px;
   color: #3F4750;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -56,4 +57,37 @@
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   text-align: center;
+}
+
+ul.crate-tab-bar {
+  max-width: 264px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+
+  li {
+    float: left;
+    padding: 0 0 5px 0;
+    margin: 0 20px 0 0;
+    list-style: none;
+    cursor: pointer;
+    color: #3F4750;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2.8px;
+    line-height: 17px;
+    text-transform: uppercase;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      .selected
+    }
+
+    &.selected {
+      border-bottom: 3px solid #F05638;
+    }
+  }
 }
