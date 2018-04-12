@@ -119,7 +119,8 @@
     -webkit-appearance: none;
     cursor: text;
     color: #292929;
-    border: 0;
+    border: 0 !important;
+    box-shadow: none;
     padding: 0;
     background: none;
   }
@@ -143,7 +144,13 @@
     transition: inherit;
   }
 
-  input:focus::-webkit-input-placeholder {
+  input::placeholder {
+    opacity: 0;
+    transition: inherit;
+  }
+
+  input:focus::-webkit-input-placeholder,
+  input:focus::placeholder{
     opacity: 1;
   }
 
