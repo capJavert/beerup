@@ -1,0 +1,119 @@
+{
+  "HOME": {
+    "HOME": "Home",
+    "HELLO": "hello world",
+    "COPYRIGHT": "&copy; 2018 All rights reserved.",
+    "SIGN_IN": "Sign in"
+  },
+  "LANGUAGES": {
+    "ENGLISH": "English",
+    "CROATIAN": "Croatian"
+  },
+  "BEERUP": {
+    "TITLE": "Join&nbsp;our<br />famous<br />beerup!",
+    "SUBTITLE": "THE BEERSTER PRO 2.0",
+    "JOIN": "Join beerup"
+  },
+  "BEER": {
+    "BEER": "Beer",
+    "CRATE": "Crate",
+    "NAME": "Name",
+    "IBU": "IBU",
+    "ABV": "ABV",
+    "DESCRIPTION": "Description",
+    "FOOD": "Food pairing",
+    "TIPS": "Tips and tricks",
+    "AUTHOR": "Contributed by",
+    "SORT": "Sort",
+    "SYNC": "Firebase sync ON",
+    "SYNC_TUTORIAL": "Your favorites and beer crates are synced with your Google account."
+  },
+  "FAVORITES": {
+    "FAVORITES": "Favorites",
+    "TITLE": "My favorite beers"
+  },
+  "JOIN": {
+    "TITLE": "Join up",
+    "JOIN": "Join",
+    "SUBTITLE": "Quick, join up before we drink all the beer!",
+    "PERSONAL_INFO": "Personal information",
+    "CONTACT_INFO": "Contact information",
+    "RSVP": {
+      "LABEL": "RSVP",
+      "COMING": "I'm coming",
+      "MAYBE": "Maybe",
+      "CANT": "Can't make it"
+    },
+    "FULL_NAME": "Full name",
+    "EMAIL": "Email",
+    "PHONE": "Phone number",
+    "ADDITIONAL_INFO": "Something you'd like to add",
+    "SUBSCRIBE": "Let me know about future beerups",
+    "REMINDER": "Remind me one day before beerup",
+    "SUCCESS_TITLE": "Subscription successful",
+    "SUCCESS_MESSAGE": "Check your email for further information and see you at our next Beerup",
+    "VALIDATOR": {
+      "NAME": "Full name can't be empty",
+      "EMAIL": "Email is not valid email",
+      "PHONE": "Phone is not valid phone number",
+      "RSVP": "You have to provide your RSVP answer"
+    }
+  },
+  "CRATE": {
+    "CRATE": "Crate",
+    "TUTORIAL_ADD": "Drag beers to the crate to have them appear in the crate",
+    "TUTORIAL_REMOVE": "Drop empty bottles here please",
+    "ONE": "One",
+    "TWO": "Two",
+    "THREE": "Three",
+    "ADD": "Add to Crate"
+  },
+  "MAIN": {
+    "TITLE": "Beerup",
+    "CLOSE": "Close",
+    "FILTERS": "Filters",
+    "PER_PAGE": "Items per page"
+  },
+  "TITLES": {
+    "CREATE": "Create",
+    "VIEW": "View",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "COMMONS": {
+    "ID": "ID",
+    "NAME": "Name",
+    "DESCRIPTION": "Description",
+    "SEARCH": "Search",
+    "RESET": "Reset",
+    "DELETE": "Delete",
+    "EDIT": "Edit",
+    "SAVE": "Save",
+    "ADD": "Create new",
+    "NEW_FEMALE": "New",
+    "NEW_MALE": "New",
+    "SAVE_NEW_MESSAGE_FEMALE": "{{modelName}} is created successfully",
+    "SAVE_NEW_MESSAGE_MALE": "{{modelName}} is created successfully",
+    "SAVE_UPDATE_MESSAGE_FEMALE": "{{modelName}} is saved successfully",
+    "SAVE_UPDATE_MESSAGE_MALE": "{{modelName}} is created successfully",
+    "DELETE_MESSAGE_FEMALE": "{{modelName}} is deleted successfully",
+    "DELETE_MESSAGE_MALE": "{{modelName}} is deleted successfully",
+    "ACTIVE": "Active",
+    "BLOCKED": "Blocked"
+  },
+  "DELETE": {
+    "TITLE": "Delete item",
+    "MESSAGE": "Are you sure you wish to delete this item?",
+    "CONFIRM": "Yes, delete",
+    "CANCEL": "Cancel"
+  },
+  "ERRORS": {
+    "ERROR": "Error",
+    "APPLICATION_ERROR": "Error occurred!",
+    "PAGE_NOT_FOUND": "Page not found!",
+    "PAGE_NOT_FOUND_MESSAGE": "This page does not exist or the resource that you are looking was deleted.",
+    "PAGE_NOT_FOUND_TIP_1": "Check your web address or use site navigation to find existent sites or resources.",
+    "PAGE_NOT_FOUND_TIP_2": "You can always go back to",
+    "PREVIOUS_PAGE": "previous page"
+  }
+}
