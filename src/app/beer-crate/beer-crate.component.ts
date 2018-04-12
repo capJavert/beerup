@@ -35,6 +35,11 @@ export class BeerCrateComponent implements OnDestroy {
   }
 
   get activeCrate(): string[] {
+
+    if (ConditionsUtil.isNull(this.crates[this.activeCrateIndex])) {
+      this.crates[this.activeCrateIndex] = [];
+    }
+
     return this.crates[this.activeCrateIndex];
   }
 

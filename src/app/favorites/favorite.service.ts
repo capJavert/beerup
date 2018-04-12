@@ -3,12 +3,16 @@ import {Injectable} from "@angular/core";
 import {ConditionsUtil} from "../modules/utils/ConditionsUtil";
 import {Beer} from "../modules/models/beer";
 import {StorageService} from "../modules/service/storage.service";
-
-const storageKey = "beerup-user";
+import * as firebase from "firebase";
+import {UserInstance} from "../modules/user/user.instance";
 
 @Injectable()
 export class FavoriteService extends StorageService {
   private _favorites: Beer[] = [];
+
+  get storageKey(): string {
+    return "beerup-favorites";
+  }
 
   /**
    * Load current favorites into memory from local storage
@@ -17,7 +21,7 @@ export class FavoriteService extends StorageService {
    */
   get favorites(): Beer[] {
     if (this.isStorageAvailable) {
-      return JSON.parse(localStorage.getItem(storageKey));
+      return JSON.parse(localStorage.getItem(this.storageKey));
     } else {
       return [];
     }
@@ -29,8 +33,13 @@ export class FavoriteService extends StorageService {
    */
   set favorites(value: Beer[]) {
     if (this.isStorageAvailable) {
-      localStorage.setItem(storageKey, JSON.stringify(value));
+      localStorage.setItem(this.storageKey, JSON.stringify(value));
       this.onChange.next(true);
+
+      if (UserInstance.isAuth) {
+        let userId = firebase.auth().currentUser.uid;
+        firebase.database().ref('users/' + userId + '/' + this.storageKey).set(value);
+      }
     }
   }
 
@@ -41,7 +50,7 @@ export class FavoriteService extends StorageService {
       if (ConditionsUtil.isNull(this.favorites)) {
         // if no favorites stored init storage
         localStorage.setItem(
-          storageKey,
+          this.storageKey,
           JSON.stringify([])
         );
       } else {

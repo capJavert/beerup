@@ -10,17 +10,13 @@ import {UserInstance} from "../../modules/user/user.instance";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   private loginProvider;
 
   constructor(private translate: TranslateService,
               private configService: ConfigService) {
     this.loginProvider = new firebase.auth.GoogleAuthProvider();
     this.loginProvider.addScope('https://www.googleapis.com/auth/plus.login');
-  }
-
-  async ngOnInit() {
-    await firebase.auth().getRedirectResult();
   }
 
   get language() {
