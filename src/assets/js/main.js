@@ -33,7 +33,7 @@ function toggleFixedBeerCrate() {
     fixedOffset = beerCrateSidebar.offsetTop;
   }
 
-  if (window.pageYOffset >= fixedOffset) {
+  if (window.pageYOffset >= fixedOffset + 100) { // added 50px offset so the page does not jump
     beerCrateSidebar.classList.add("fixed");
   } else {
     beerCrateSidebar.classList.remove("fixed");

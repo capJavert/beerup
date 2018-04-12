@@ -13,7 +13,7 @@ export abstract class BaseComponent implements OnDestroy {
 
   constructor(protected notificationService: NotificationService,
               private _hotkeysService: HotkeysService,
-              protected loader: LoaderService,
+              public loader: LoaderService,
               protected router: Router,
               protected activatedRoute: ActivatedRoute) {
     this._hotkeysService.add(new Hotkey('ctrl+q', (): boolean => {
