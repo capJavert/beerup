@@ -22,7 +22,18 @@
   </div>
 
   <div class="content-container">
-    <h3 class="title">{{'BEER.BEER' | translate}}</h3>
+    <div class="title-container">
+      <h3 class="title">{{'BEER.BEER' | translate}}</h3>
+
+      <aside class="sort-container">
+        <ul class="tab-bar">
+          <li class="disabled">{{'BEER.SORT' | translate}}</li>
+          <li [ngClass]="{'selected': sortColumn === 'name'}" (click)="sortColumn = 'name'">{{'BEER.NAME' | translate}}</li>
+          <li [ngClass]="{'selected': sortColumn === 'ibu'}" (click)="sortColumn = 'ibu'">{{'BEER.IBU' | translate}}</li>
+          <li [ngClass]="{'selected': sortColumn === 'abv'}" (click)="sortColumn = 'abv'">{{'BEER.ABV' | translate}}</li>
+        </ul>
+      </aside>
+    </div>
 
     <app-beer-list (loadMore)="loadMore()" [data]="beers" [isLoading]="loader.loading$ | async"></app-beer-list>
     <app-beer-crate></app-beer-crate>

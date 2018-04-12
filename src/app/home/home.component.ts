@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {BaseComponent} from "../modules/components/base.component";
 import {HotkeysService} from "angular2-hotkeys";
 import {NotificationService} from "../modules/notification/notification.service";
 import {LoaderService} from "../modules/loader/loader.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Beer} from "../modules/models/beer";
 import {BeerService} from "../modules/service/beer.service";
+import {SortComponent} from "../modules/components/sort.component";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.less']
 })
-export class HomeComponent extends BaseComponent implements OnInit {
+export class HomeComponent extends SortComponent<Beer> implements OnInit {
   public beers: Beer[];
   private currentPage: number;
 
@@ -27,6 +27,10 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
     this.beers = [];
     this.currentPage = 1;
+  }
+
+  get items() {
+    return this.beers;
   }
 
   ngOnInit() {

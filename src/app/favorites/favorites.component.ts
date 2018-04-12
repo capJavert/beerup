@@ -7,13 +7,14 @@ import {HotkeysService} from "angular2-hotkeys";
 import {FavoriteService} from "./favorite.service";
 import {Beer} from "../modules/models/beer";
 import {ConditionsUtil} from "../modules/utils/ConditionsUtil";
+import {SortComponent} from "../modules/components/sort.component";
 
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.less']
 })
-export class FavoritesComponent extends BaseComponent implements OnDestroy {
+export class FavoritesComponent extends SortComponent<Beer> implements OnDestroy {
   beers: Beer[];
   private onFavoritesChanged;
 
@@ -35,5 +36,9 @@ export class FavoritesComponent extends BaseComponent implements OnDestroy {
     if (ConditionsUtil.isNotNull(this.onFavoritesChanged)) {
       this.onFavoritesChanged.unsubscribe();
     }
+  }
+
+  get items() {
+    return this.beers;
   }
 }

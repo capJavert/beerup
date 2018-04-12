@@ -50,7 +50,7 @@ app-beer-crate {
     '. sidebar'
   ;
   grid-template-rows: 94px auto;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: auto 270px;
 }
 
 @media(max-width: 768px) {
@@ -71,9 +71,15 @@ app-beer-crate {
   }
 }
 
+@media(max-width: 800px) {
+  .content-container {
+    grid-template-rows: 120px auto !important;
+  }
+}
+
 @media(max-width: 768px) {
   .content-container {
-    grid-template-columns: 65% 35%;
+    grid-template-columns: auto 270px;
   }
 }
 

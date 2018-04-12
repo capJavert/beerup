@@ -21,7 +21,7 @@ app-beer-crate {
     '. sidebar'
   ;
   grid-template-rows: 94px auto;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: auto 270px;
 }
 
 .icon-heart {
@@ -41,4 +41,22 @@ a {
 
 h4 {
   margin-bottom: 40px;
+}
+
+@media(max-width: 800px) {
+  .content-container {
+    grid-template-rows: 120px auto !important;
+  }
+}
+
+@media(max-width: 768px) {
+  .content-container {
+    grid-template-columns: auto 270px;
+  }
+}
+
+@media(max-width: 600px) {
+  .content-container {
+    grid-template-columns: 50% 50%;
+  }
 }

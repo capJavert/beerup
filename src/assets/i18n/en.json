@@ -16,12 +16,14 @@
   "BEER": {
     "BEER": "Beer",
     "CRATE": "Crate",
+    "NAME": "Name",
     "IBU": "IBU",
     "ABV": "ABV",
     "DESCRIPTION": "Description",
     "FOOD": "Food pairing",
     "TIPS": "Tips and tricks",
-    "AUTHOR": "Contributed by"
+    "AUTHOR": "Contributed by",
+    "SORT": "Sort"
   },
   "FAVORITES": {
     "FAVORITES": "Favorites",
