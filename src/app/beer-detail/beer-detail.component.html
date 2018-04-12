@@ -31,6 +31,8 @@
             <h5><i class="icon-food"></i>&nbsp;{{'BEER.FOOD' | translate}}</h5>
             <p>{{beer.food_pairing}}</p>
             <p>{{'BEER.AUTHOR' | translate}}: <strong>{{beer.contributed_by}}</strong></p>
+
+            <button (click)="addToCrate($event)" class="join-button">Add to Crate</button>
           </aside>
         </div>
       </section>

@@ -1,21 +1,33 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {ConditionsUtil} from "../modules/utils/ConditionsUtil";
 import {CrateService} from "./crate.service";
+import {UserInstance} from "../modules/user/user.instance";
 
 @Component({
   selector: 'app-beer-crate',
   templateUrl: './beer-crate.component.html',
   styleUrls: ['./beer-crate.component.less']
 })
-export class BeerCrateComponent {
+export class BeerCrateComponent implements OnDestroy {
   crates: string[][];
-  activeCrateIndex: number;
+  private _activeCrateIndex: number;
   selectedBeerIndex: number;
+  private onCratesChanged;
 
   constructor(public crateService: CrateService) {
     this.selectedBeerIndex = null;
     this.crates = this.crateService.crates;
     this.activeCrateIndex = 0;
+
+    this.onCratesChanged = this.crateService.onChange.subscribe(
+      () => this.crates = this.crateService.crates
+    );
+  }
+
+  ngOnDestroy() {
+    if (ConditionsUtil.isNotNull(this.onCratesChanged)) {
+      this.onCratesChanged.unsubscribe();
+    }
   }
 
   allowDrop(event) {
@@ -24,6 +36,15 @@ export class BeerCrateComponent {
 
   get activeCrate(): string[] {
     return this.crates[this.activeCrateIndex];
+  }
+
+  get activeCrateIndex(): number {
+    return this._activeCrateIndex;
+  }
+
+  set activeCrateIndex(value: number) {
+    this._activeCrateIndex = value;
+    UserInstance.session.activeCrateIndex = this._activeCrateIndex;
   }
 
   drop(event) {

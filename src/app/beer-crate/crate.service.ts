@@ -27,6 +27,7 @@ export class CrateService extends StorageService {
   set crates(value: string[][]) {
     if (this.isStorageAvailable) {
       localStorage.setItem(storageKey, JSON.stringify(value));
+      this.onChange.next(true);
     }
   }
 
@@ -42,5 +43,12 @@ export class CrateService extends StorageService {
         );
       }
     }
+  }
+
+  addBeerToCrate(beerSrc: string, crateIndex: number) {
+    let crates = this.crates;
+    crates[crateIndex].push(beerSrc);
+
+    this.crates = crates;
   }
 }

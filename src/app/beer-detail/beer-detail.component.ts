@@ -2,6 +2,8 @@ import {Component, Input} from '@angular/core';
 import {Beer} from "../modules/models/beer";
 import {FavoriteService} from "../favorites/favorite.service";
 import {Hotkey, HotkeysService} from "angular2-hotkeys";
+import {CrateService} from "../beer-crate/crate.service";
+import {UserInstance} from "../modules/user/user.instance";
 
 @Component({
   selector: 'app-beer-detail',
@@ -12,7 +14,8 @@ export class BeerDetailComponent {
   @Input() beer: Beer;
 
   constructor(private hotkeysService: HotkeysService,
-              public favoriteService: FavoriteService) {
+              public favoriteService: FavoriteService,
+              private crateService: CrateService) {
 
     // modal can be closed with esc or backspace press
     this.hotkeysService.add(new Hotkey(['esc', 'backspace'], (): boolean => {
@@ -37,5 +40,11 @@ export class BeerDetailComponent {
     } else {
       this.favoriteService.unfavorite(this.beer);
     }
+  }
+
+  addToCrate(event) {
+    event.stopPropagation();
+
+    this.crateService.addBeerToCrate(this.beer.image_url, UserInstance.session.activeCrateIndex);
   }
 }
