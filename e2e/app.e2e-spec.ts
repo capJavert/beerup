@@ -10,6 +10,6 @@ describe('App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
-    await expect(page.getParagraphText()).toContain('App');
+    await expect(page.getParagraphText()).toContain('Beer');
   });
 });
