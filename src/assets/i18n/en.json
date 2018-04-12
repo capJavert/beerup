@@ -2,7 +2,8 @@
   "HOME": {
     "HOME": "Home",
     "HELLO": "hello world",
-    "COPYRIGHT": "&copy; 2018 All rights reserved."
+    "COPYRIGHT": "&copy; 2018 All rights reserved.",
+    "SIGN_IN": "Sign in"
   },
   "LANGUAGES": {
     "ENGLISH": "English",
@@ -23,7 +24,9 @@
     "FOOD": "Food pairing",
     "TIPS": "Tips and tricks",
     "AUTHOR": "Contributed by",
-    "SORT": "Sort"
+    "SORT": "Sort",
+    "SYNC": "Firebase sync ON",
+    "SYNC_TUTORIAL": "Your favorites and beer crates are synced with your Google account."
   },
   "FAVORITES": {
     "FAVORITES": "Favorites",
