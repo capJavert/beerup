@@ -1,20 +1,18 @@
 
-<div class="app-container app-is-mobile">
+<div class="app-container">
   <app-header></app-header>
 
-  <div class="container-fluid">
-    <div class="row main-content ">
-      <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-        <h1>{{'ERRORS.APPLICATION_ERROR' | translate}}</h1>
+  <div class="main-container">
+    <div class="content-container">
+      <h1>{{'ERRORS.APPLICATION_ERROR' | translate}}</h1>
 
-        <section *ngIf="appError" class="error-info">
-          <h4>{{appError.title}}</h4>
+      <section *ngIf="appError" class="error-info">
+        <h4>{{appError.title}}</h4>
 
-          <code *ngFor="let line of appError.stackTrace">{{line}}</code>
-        </section>
-      </div>
+        <code *ngFor="let line of appError.stackTrace">{{line}}</code>
+      </section>
     </div>
   </div>
-</div>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
+</div>
